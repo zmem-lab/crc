@@ -92,49 +92,65 @@ Error generating stack: `+l.message+`
 
     <div id="root"></div>
     
-    <script>
-  // Uniformiza footer na página Calculator (igual ao da Home)
+<script>
+  // Uniformiza footer Calculator - seletor corrigido e mais robusto
   document.addEventListener('DOMContentLoaded', function() {
-    // Só executa se for a página /calculator
-    if (window.location.pathname === '/calculator' || 
-        window.location.pathname === '/calculator/' || 
-        window.location.pathname.endsWith('/calculator')) {
-      
-      // Seletor do footer antigo (baseado no código buildado que vimos)
-      const oldFooter = document.querySelector('footer.bg-primary.text-white\\/60');
-      
-      if (oldFooter) {
-        // Cria o novo footer idêntico ao da Home
-        const newFooter = document.createElement('footer');
-        newFooter.className = 'bg-primary text-white/80 py-12 border-t border-white/10';
-        newFooter.innerHTML = `
-          <div class="container max-w-6xl mx-auto px-4">
-            <div class="flex flex-col items-center justify-center gap-6 mb-8">
-              <a href="mailto:alexandre.sah@zmem.org" class="inline-flex items-center justify-center">
-                <div class="relative group">
-                  <div class="absolute inset-0 bg-accent/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
-                  <div class="relative w-16 h-16 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center hover:bg-accent/20 transition-colors duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent">
-                      <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                    </svg>
-                  </div>
-                </div>
-              </a>
-              <a href="mailto:alexandre.sah@zmem.org" class="text-accent hover:text-accent/80 transition-colors font-medium text-sm">
-                Get in touch: alexandre.sah@zmem.org
-              </a>
-            </div>
-            
-            <div class="border-t border-white/10 pt-8 text-sm text-center">
-              <p>© 2026 Alexandre de Sá Vieira. Cosmic Rhythm Consistency Framework is licensed under CC BY 4.0. | Submitted for consideration at the Cosmic Rhythms Workshop 2026, CBPF, Rio de Janeiro.</p>
-            </div>
-          </div>
-        `;
-        
-        // Substitui o antigo pelo novo
-        oldFooter.parentNode.replaceChild(newFooter, oldFooter);
+    // Detecta se é Calculator (várias formas para segurança)
+    if (!window.location.pathname.includes('/calculator')) return;
+
+    // Seletor ajustado: usa apenas classes principais, sem escaping problemático
+    // Tenta primeiro o mais específico, depois fallback para qualquer footer com texto conhecido
+    let oldFooter = document.querySelector('footer.bg-primary.text-white\\/60') ||
+                    document.querySelector('footer.bg-primary') ||
+                    document.querySelector('footer.mt-10') ||
+                    null;
+
+    // Fallback extra: procura por texto único do footer antigo
+    if (!oldFooter) {
+      const allFooters = document.querySelectorAll('footer');
+      for (let f of allFooters) {
+        if (f.innerText.includes('Alexandre de Sá Vieira') || 
+            f.innerText.includes('Cosmic Rhythm Consistency Framework')) {
+          oldFooter = f;
+          break;
+        }
       }
+    }
+
+    if (oldFooter) {
+      console.log('[Footer Fix] Footer antigo encontrado! Classes:', oldFooter.className);
+      console.log('[Footer Fix] Substituindo agora...');
+
+      const newFooter = document.createElement('footer');
+      newFooter.className = 'bg-primary text-white/80 py-12 border-t border-white/10';
+      newFooter.innerHTML = `
+        <div class="container max-w-6xl mx-auto px-4">
+          <div class="flex flex-col items-center justify-center gap-6 mb-8">
+            <a href="mailto:alexandre.sah@zmem.org" class="inline-flex items-center justify-center">
+              <div class="relative group">
+                <div class="absolute inset-0 bg-accent/20 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
+                <div class="relative w-16 h-16 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center hover:bg-accent/20 transition-colors duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </div>
+              </div>
+            </a>
+            <a href="mailto:alexandre.sah@zmem.org" class="text-accent hover:text-accent/80 transition-colors font-medium text-sm">
+              Get in touch: alexandre.sah@zmem.org
+            </a>
+          </div>
+          
+          <div class="border-t border-white/10 pt-8 text-sm text-center">
+            <p>© 2026 Alexandre de Sá Vieira. Cosmic Rhythm Consistency Framework is licensed under CC BY 4.0. | Submitted for consideration at the Cosmic Rhythms Workshop 2026, CBPF, Rio de Janeiro.</p>
+          </div>
+        </div>
+      `;
+
+      oldFooter.parentNode.replaceChild(newFooter, oldFooter);
+    } else {
+      console.log('[Footer Fix] Nenhum footer antigo encontrado. Verifique o console para classes reais.');
     }
   });
 </script>
