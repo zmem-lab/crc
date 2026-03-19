@@ -4,22 +4,24 @@
 
 ---
 
-## 🌐 About this Site
+## 🌐 Overview
 
-This repository contains the source code for the **Cosmic Rhythms Consistency (CRC)** website. It serves as a high-precision digital environment designed to present the framework's core concepts, featuring:
+This repository hosts the web-based implementation of the **Cosmic Rhythms Consistency (CRC)** framework. It provides a specialized digital environment for cosmological data visualization and consistency validation.
 
-- **Interactive Showcases**: Visual demonstrations of transient rejection logic.
-- **Precision Tools**: Web-based calculators and consistency validation interfaces.
-- **Scientific Documentation**: A clear, accessible layout for high-precision cosmology data standards.
+### Core Features
+- **Interactive Demonstrations**: Visual showcases of transient rejection logic.
+- **Precision Calculators**: High-fidelity tools for cosmological parameter checking.
+- **Responsive Interface**: Optimized for multi-device access within the scientific community.
 
-## 🛠 Tech Stack
+## 🛠 Technical Architecture
 
-Built with a modern, high-performance stack to ensure a seamless experience for the scientific community:
-- **React 19**: For a dynamic and responsive UI.
-- **Vite**: Ultra-fast frontend tooling and bundling.
-- **Tailwind CSS v4**: For advanced, physics-inspired styling and layout.
-- **Lucide & Radix UI**: High-quality, accessible interface components.
+The platform is built using a standardized, component-based frontend stack to ensure performance and long-term maintainability:
+
+- **Library**: React (Functional components & Hooks)
+- **Bundler**: Vite (Optimized production builds)
+- **Styling**: Tailwind CSS (Utility-first design system)
+- **UI Components**: Radix UI & Lucide (Accessible and consistent design primitives)
 
 ## 📄 License
 
-This website and its content are licensed under a **Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
+This website and its content are licensed under a **Creative Commons Attribution 4.0 International License (CC BY 4.0)**. 
