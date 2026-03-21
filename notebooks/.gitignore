@@ -1,0 +1,38 @@
+# ── Python / Jupyter ─────────────────────────────
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints/
+.env
+venv/
+.venv/
+
+# ── Dados grandes (não versionar) ─────────────────
+*.fits
+*.h5
+*.hdf5
+*.npz
+*.csv
+data/raw/*
+!data/raw/.gitkeep
+
+# ── Outputs gerados pelo notebook (opcional) ──────
+# Se quiser versionar os resultados, comente as linhas abaixo:
+cosmic_rhythm_transient_rejection/
+*.pdf
+*.json
+
+# ── Sistema operacional ───────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── IDEs / Editores ───────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Segurança (NUNCA subir isso!) ─────────────────
+*.pem
+*.key
+secrets.json
+credentials.yaml
