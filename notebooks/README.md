@@ -76,6 +76,8 @@ Validates the CRC framework against real astrophysical transient data drawn from
 
 **Validation rationale:** Fast Radio Bursts exhibit intrinsic durations $\Delta t_\mathrm{FRB} \sim 0.5$–$20$ ms, which satisfy $\Delta t_\mathrm{FRB} \ll \tau_{dwell} \approx 166$ s (BINGO frame) by approximately four orders of magnitude. The CRC temporal persistence filter therefore correctly classifies every FRB as an impulsive transient — the intended behaviour, since FRBs are not the target 21 cm cosmological signal. Post-hoc scientific recovery of rejected FRB events is enabled through IEP cross-matching with public transient catalogues (CHIME/FRB, ASKAP).
 
+**Data sources**: [CHIME/FRB Catalogue](https://www.chime-frb.ca/catalog) | [Data Dictionary](https://www.chime-frb.ca/information)
+
 **Expected outcome:** 100% rejection efficiency across the full catalogue sample.
 
 ---
@@ -85,6 +87,7 @@ Validates the CRC framework against real astrophysical transient data drawn from
 ### Option 1: Google Colab (Recommended for Quick Testing)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zmem-lab/crc/blob/main/notebooks/CRC_Framework_Validation.ipynb)
+[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)](https://github.com/zmem-lab/crc/blob/main/notebooks/CRC_Framework_Validation.ipynb)
 
 Simply click the badge and execute cells sequentially. No local installation required. All dependencies are installed automatically by Cell 1.
 
