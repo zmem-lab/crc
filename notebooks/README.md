@@ -87,11 +87,12 @@ Validates the CRC framework against real astrophysical transient data drawn from
 ### Option 1: Google Colab (Recommended for Quick Testing)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zmem-lab/crc/blob/main/notebooks/CRC_Framework_Validation.ipynb)
-[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)](https://github.com/zmem-lab/crc/blob/main/notebooks/CRC_Framework_Validation.ipynb)
 
 Simply click the badge and execute cells sequentially. No local installation required. All dependencies are installed automatically by Cell 1.
 
 ### Option 2: Local Jupyter (For Development and Customisation)
+
+[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)](https://github.com/zmem-lab/crc/blob/main/notebooks/CRC_Framework_Validation.ipynb)
 
 ```bash
 # Clone the repository
