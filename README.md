@@ -18,17 +18,6 @@ This repository hosts the web-based implementation of the **Cosmic Rhythm Consis
 
 ---
 
-## 🛠 Technical Architecture
-
-The platform is built using a standardised, component-based frontend stack to ensure performance and long-term maintainability:
-
-- **Library**: React (Functional components & Hooks)
-- **Bundler**: Vite (Optimised production builds)
-- **Styling**: Tailwind CSS (Utility-first design system)
-- **UI Components**: Radix UI & Lucide (Accessible and consistent design primitives)
-
----
-
 ## 📓 Scientific Validation Notebook
 
 The CRC framework is accompanied by a fully reproducible Jupyter notebook. See [`notebooks/`](notebooks/) for the validation pipeline, empirical results, and execution instructions.
