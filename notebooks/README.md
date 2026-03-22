@@ -16,7 +16,7 @@ Installs all required packages and imports scientific libraries. Cell 1 need onl
 
 Loads official 2026 instrument parameters for the selected survey. All values are taken directly from peer-reviewed references.
 
-| Survey | Instrument | τ_dwell |
+| Survey | Instrument | $\tau_{\text{dwell}}$ |
 |---|---|---|
 | `BINGO` | BAO from Integrated Neutral Gas Observations (21 cm drift-scan) | 166 s |
 | `SIMONS` | Simons Observatory Small Aperture Telescope (constant-elevation scan) | 2 s |
@@ -33,7 +33,7 @@ Generates a mock cosmological HEALPix sky map using a lognormal HI brightness te
 Implements the two-stage CRC pipeline described in the associated paper:
 
 - **Algorithm 1 — Event Detection**: identifies transient candidates in the TOD via a running-median/MAD adaptive threshold ($O(N \log N)$ vectorised implementation).
-- **Algorithm 2 — Temporal Persistence Filter**: rejects candidates with duration $\Delta t < \tau_{dwell}$ and generates cryptographically verifiable Instrumental Event Provenance (IEP) tags at two levels of detail (SHA-256 hashing; ED25519 signature placeholder).
+- **Algorithm 2 — Temporal Persistence Filter**: rejects candidates with duration $\Delta t < \tau_{\text{dwell}}$ and generates cryptographically verifiable Instrumental Event Provenance (IEP) tags at two levels of detail (SHA-256 hashing; ED25519 signature placeholder).
 
 ### Section 5 — Output, Diagnostics and Manuscript Summary
 
@@ -44,7 +44,7 @@ Serialises IEP tags and validation statistics to disk (JSON), verifies the pipel
 Produces publication-quality figures illustrating the filter behaviour:
 
 - **Figure A** — Time-Ordered Data with flagged and rejected transient events
-- **Figure B** — Logarithmic comparison of dwell/duration times across interference source classes, with the τ_dwell rejection boundary highlighted
+- **Figure B** — Logarithmic comparison of dwell/duration times across interference source classes, with the $\tau_{\text{dwell}}$ rejection boundary highlighted
 
 ### Section 7 — Stage-IV Validation (Optional)
 
@@ -74,7 +74,7 @@ If you extend this work using external simulation products, please cite the corr
 
 Validates the CRC framework against real astrophysical transient data drawn from the CHIME/FRB Collaboration (2021), ApJS 257, 59 ([DOI: 10.3847/1538-4365/ac33ab](https://doi.org/10.3847/1538-4365/ac33ab)).
 
-**Validation rationale:** Fast Radio Bursts exhibit intrinsic durations $\Delta t_\mathrm{FRB} \sim 0.5$–$20$ ms, which satisfy $\Delta t_\mathrm{FRB} \ll \tau_{dwell} \approx 166$ s (BINGO frame) by approximately four orders of magnitude. The CRC temporal persistence filter therefore correctly classifies every FRB as an impulsive transient — the intended behaviour, since FRBs are not the target 21 cm cosmological signal. Post-hoc scientific recovery of rejected FRB events is enabled through IEP cross-matching with public transient catalogues (CHIME/FRB, ASKAP).
+**Validation rationale:** Fast Radio Bursts exhibit intrinsic durations $\Delta t_{\mathrm{FRB}} \sim 0.5$–$20$ ms, which satisfy $\Delta t_{\mathrm{FRB}} \ll \tau_{\text{dwell}} \approx 166$ s (BINGO frame) by approximately four orders of magnitude. The CRC temporal persistence filter therefore correctly classifies every FRB as an impulsive transient — the intended behaviour, since FRBs are not the target 21 cm cosmological signal. Post-hoc scientific recovery of rejected FRB events is enabled through IEP cross-matching with public transient catalogues (CHIME/FRB, ASKAP).
 
 **Data sources**: [CHIME/FRB Catalogue](https://www.chime-frb.ca/catalog) | [Data Dictionary](https://www.chime-frb.ca/information)
 
