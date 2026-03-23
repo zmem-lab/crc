@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this framework in your research, please cite it as follows."
+authors:
+  - family-names: "Sá Vieira"
+    given-names: "Alexandre"
+    name-particle: "de"
+    orcid: "https://orcid.org/0009-0009-2360-7570"
+    affiliation: "Independent Researcher, Jardim do Seridó, RN, Brazil"title: "Cosmic Rhythm Consistency (CRC): A Physics-Driven, Content-Agnostic Transient Rejection Framework"
+version: 1.2.0
+doi: 10.5281/zenodo.19021194
+date-released: 2026-03-14
+url: "https://crc.zmem.org"
+repository-code: "https://github.com/zmem-lab/crc/"
+keywords:
+  - "Cosmic Rhythm Consistency"
+  - "Physics-Driven Transient Rejection"
+  - "Verifiable Data Provenance"
+  - "Deterministic O(N) Algorithms"
+  - "Multi-wavelength Data Integrity"
+  - "BINGO & SKA Radio Surveys"
+  - "Optical/IR Artifact Mitigation (JWST, LSST, Euclid)"
+  - "Green Computing in Cosmology"
+  - "Instrument-Agnostic Validation"
+abstract: >-
+  The CRC framework introduces a wavelength-agnostic paradigm for transient rejection 
+  by enforcing the physical timescale τ_dwell dictated by instrument geometry. 
+  Moving beyond black-box ML, CRC offers a deterministic O(N) solution to distinguish 
+  genuine cosmic signals from both anthropogenic RFI and natural impulsive contaminants 
+  (cosmic rays, micrometeorites). By ensuring Verifiable Provenance, it provides a 
+  sustainable, auditável layer of data governance for exascale observatories, 
+  including BINGO, SKA, Vera Rubin, and JWST-class pipelines.
